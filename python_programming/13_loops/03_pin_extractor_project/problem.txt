@@ -1,0 +1,98 @@
+Step 1
+In this workshop you will create a pin extractor, the pin digits are hidden in each line of a poem.
+
+Start by creating a function called pin_extractor with a parameter poem. An empty function gives an error, so add pass inside the function momentarily to make it valid.
+
+Step 2
+You will need a variable to hold the secret code while you decode it, so remove pass and create a variable called secret_code inside the function and assign to it an empty string.
+
+Step 3
+While you work on the function it would be useful to have a function call for debugging purposes, so create a poem variable, outside the function, that contains this poem:
+
+Stars and the moon
+shine in the sky
+white and bright
+until the end of the night
+You can use a multi-line string for that.
+
+And then, call the function with the poem variable as argument.
+
+Step 4
+Now that you have added a function call you can see any error created inside the function in the terminal, and you can always use print to see the value of things.
+
+There is a digit of the pin hidden in every line, so inside the function use the split method to divide the string in a list of lines. Split the lines on the newline character (\n), and assign the resulting list to a variable called lines.
+
+Step 5
+You need to work on each line independently: create a loop over lines that uses line as loop variable. Inside the loop, print line.
+
+Step 6
+The nth digit of the pin is hidden as the length of the nth word in the nth line.
+
+To find the length of the nth word, the next step is to separate the line of the poem into a list of words: inside the loop, create a variable words and assign to it the value of line split into words using the split method.
+
+Then, add a print call with words as its argument.
+
+Step 7
+As you learned in a previous lesson, the enumerate function allows you to keep track of the index while looping over an iterable:
+
+fruits = ['apple', 'plum', 'bananas']
+
+for index, item in enumerate(fruits):
+    print(index, item)
+
+# 0 apple
+# 1 plum
+# 2 bananas
+The nth digit of the secret code comes from the nth word of the nth line, so you need to know what is the number of each line.
+
+Change the loop so that it iterates on enumerate(lines), and add another loop variable before line named line_index.
+
+Also, update the print call to print(line_index, line).
+
+Step 8
+In the last line of the loop, update the print call so that it prints the word inside the words list at index line_index.
+
+Step 9
+The len function gives the length of a string. Update the second print call to print the length of that word.
+
+Step 10
+The length returned from len is an integer, you need to convert it to a string using the str function to be able to add it to the secret_code string.
+
+Update the print call to print the length as a string.
+
+Step 11
+Now you can concatenate str(len(words[line_index])) to secret_code. Remove the print call and use the augmented assignment += for concatenation.
+
+Step 12
+Remove the two print calls and add a return statement that returns secret_code on the last line in the function.
+
+Step 13
+Pass pin_extractor(poem) to the print function so you can see what the function is returning.
+
+Step 14
+Now the function is doing a good job in extracting the code from the poem, but there is an edge case to consider: the line of the poem could be shorter than expected, and that would make the function error out (you can try this removing the word bright from the poem).
+
+Put the line secret_code += str(len(words[line_index])) in an if statement that checks that there are enough words in the words list.
+
+Step 15
+The third line of the poem is missing a third word, so the pin is shorter than expected.
+
+Add an else clause that concatenates a '0' to secret_code when there are not enough words, so that all lines of the poem are used to find digits.
+
+Step 16
+Now the pin extractor works, but it could be more efficient! It could extract the pin from many poems at the same time!
+
+Add two more poems in the global scope, poem2 = 'The grass is green\nhere and there\nhoping for rain\nbefore it turns yellow' and poem3 = 'There\nonce\nwas\na\ndragon', and for now, comment out the print with the call to pin_extractor.
+
+Step 17
+Update the function argument to be poems, then create a for loop around all the current content of the function that iterates over poems and uses poem as loop variable.
+
+Step 18
+Before the loop, create a new variable secret_codes that has a starting value of an empty list.
+
+Then replace the return secret_code line with a line that appends secret_code to the secret_codes list.
+
+Step 19
+Finally, return secret_codes, then uncomment the function call and update the argument to be [poem, poem2, poem3]. Now your function works with multiple poems at once, and can extract multiple pins!
+
+The pin_extractor function is completed.
