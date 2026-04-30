@@ -1,0 +1,67 @@
+ Standard library
+ A library is a collection of pre-written, built-in modules 
+ and functions that come with a programming language.
+ A library in programming is like a toolbox:
+ It contains pre-written code (functions, classes, etc.)
+ so you don't have to build everything from scratch.
+
+ Python comes with a built-in "Standard Library"
+ there are 200+ modules in python and it keeps evolving with new Python versions.
+ It includes modules for math, randomness, dates, files, etc.
+
+ Some common modules are:
+ math     -> advanced mathematical operations
+ random   -> generate random values
+ datetime -> work with dates and time
+ re       -> regular expressions (pattern matching) and so on
+
+ 
+Some of the functions in the math module are:
+
+ Square root           => math.sqrt(x)
+ Power                 => math.pow(x, y)
+ Absolute value        => math.fabs(x)
+
+ Ceiling (round up)    => math.ceil(x)
+ Floor (round down)    => math.floor(x)
+ Truncate (remove dec) => math.trunc(x)
+
+ Factorial             => math.factorial(n)
+ GCD                   => math.gcd(a, b)
+ LCM                   => math.lcm(a, b)
+
+ Exponential (e^x)     => math.exp(x)
+ Natural log (ln)      => math.log(x)
+ Log base 10           => math.log10(x)
+ Log base 2            => math.log2(x)
+
+ Sine                  => math.sin(x)
+ Cosine                => math.cos(x)
+ Tangent               => math.tan(x)
+
+ Inverse sine          => math.asin(x)
+ Inverse cosine        => math.acos(x)
+ Inverse tangent       => math.atan(x)
+
+ Convert to radians    => math.radians(deg)
+ Convert to degrees    => math.degrees(rad)
+
+ Hypotenuse            => math.hypot(x, y)
+
+ Modulo (remainder)    => math.fmod(x, y)
+
+ Check infinity        => math.isinf(x)
+ Check NaN             => math.isnan(x)
+ Check finite          => math.isfinite(x)
+
+ Copy sign             => math.copysign(x, y)
+
+ Gamma function        => math.gamma(x)
+ Log gamma             => math.lgamma(x)
+
+ Constants
+ PI                    => math.pi
+ Euler number          => math.e
+ Tau (2*pi)            => math.tau
+ Infinity              => math.inf
+ Not a number          => math.nan
